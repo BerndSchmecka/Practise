@@ -28,3 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Compile tictactoe.c
         run: gcc tictactoe.c -o tictactoe
+
+      - name: Compile list.c
+      run: gcc list.c -o list
