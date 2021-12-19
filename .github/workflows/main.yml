@@ -32,16 +32,19 @@ jobs:
       - name: Compile list.c
         run: gcc list.c -o list
         
-      - name: Upload tictactoe
+      - name: Organize files for upload
+        shell: bash
+        run: |
+          mkdir -p artifact
+          cp ./tictactoe artifact
+          cp ./test artifact
+          ...
+        
+      - name: Upload Artifacts
         uses: actions/download-artifact@v2
         with:
           path: ./
           name: ./tictactoe
-      - name: Upload list
-        uses: actions/download-artifact@v2
-        with:
-          path: ./
-          name: ./list
   test:
     runs-on: ubuntu-latest
     steps:
