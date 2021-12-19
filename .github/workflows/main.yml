@@ -31,3 +31,10 @@ jobs:
 
       - name: Compile list.c
         run: gcc list.c -o list
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: ./list
+      - name: Test2
+        run: ./tictactoe
